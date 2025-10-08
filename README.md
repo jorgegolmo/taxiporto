@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b216f42f8920de9a5eea5d458672589bcb76d7ea8ab98cd3b40259365943a373
-size 573
+
+# Setup
+
+First follow the assignment's setup instructions up to the Python requirements installation. Then, for the database connector to work properly, you need to add the following `.env` file inside the **git root** directory:
+
+```
+HOSTNAME=$(your computer/container's hostname)
+DATABASE=$(the name of the database you created)
+USERNAME=$(your MySQL username)
+PASSWORD=$(your MySQL password)
+```
+
+Lastly, you need to have Git LFS installed so as to download porto.csv. If you have not installed it before cloning the repo, you must do `git lfs pull` to fetch the file.
