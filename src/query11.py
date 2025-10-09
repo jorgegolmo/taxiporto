@@ -9,8 +9,6 @@ class IdleTimeAnalysis:
         self.cursor = self.connection.cursor
 
     def compute_idle_times(self):
-        print("🟢 Running SQL to get trip start and end times...")
-
         # SQL base: calcula hora de inicio y hora estimada de fin por taxi
         query = """
         SELECT
@@ -77,3 +75,7 @@ def main():
     finally:
         if program:
             program.close()
+
+
+if __name__ = '__main__':
+    main()
