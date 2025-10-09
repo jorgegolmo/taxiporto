@@ -153,4 +153,8 @@ def main():
     except Exception as e:
         print("ERROR:", e)
     finally:
+
         program.close()
+
+if __name__ == '__main__':
+    main()
