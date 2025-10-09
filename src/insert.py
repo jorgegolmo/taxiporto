@@ -7,7 +7,7 @@ import pandas as pd
 import json
 
 
-class PortoInserter:
+class Inserter:
     def __init__(self):
         self.connection = DbConnector()
         self.db_connection = self.connection.db_connection
@@ -22,7 +22,7 @@ class PortoInserter:
             # Convert POLYLINE JSON to LINESTRING
             coords = json.loads(row["POLYLINE"])
             if len(coords) < 2:
-                continue  # skip empty polylines
+                continue
             line_wkt = LineString(coords).wkt
 
             # Insert into polylines
@@ -56,7 +56,7 @@ class PortoInserter:
 
 
 def main():
-    inserter = PortoInserter()
+    inserter = Inserter()
     try:
         inserter.insert(Path(__file__).resolve().parent.parent / "dat" / "porto.csv")
     finally:
